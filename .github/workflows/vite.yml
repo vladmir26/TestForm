@@ -32,6 +32,7 @@ jobs:
         run: |
            npm install vite
            npm run build
+           npm run preview
   deploy:
     environment:
       name: github-pages
@@ -45,10 +46,6 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
-      - name: Preview
-        run: |
-              npm install vite
-              npm run preview
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
